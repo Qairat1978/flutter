@@ -1,0 +1,52 @@
+import 'package:flutter/material.dart';
+class AppbarDemo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.menu),
+          tooltip: 'Navigation menu',
+          onPressed: null,
+        ),
+        title: const Text('AppbarDemo'),
+        actions: <Widget>[
+          IconButton(onPressed: () {},
+            icon: const Icon(Icons.add_alert),
+            tooltip: 'Notification',
+          ),
+          IconButton(onPressed: () {},
+            icon: const Icon(Icons.message),
+            tooltip: 'Message',),
+          IconButton(onPressed: () {},
+            icon: const Icon(Icons.delete),
+            tooltip: 'Message',),
+          IconButton(onPressed: () {},
+            icon: const Icon(Icons.message),
+            tooltip: 'Message',),
+        ],
+      ),
+      body: const Center(
+        child: Text('Home page',
+          style: TextStyle(fontSize: 50),
+
+        ),
+      ),
+    );
+  }
+}
+
+class MyApp extends StatelessWidget{
+  static const String _title='IconwidgetDemo';
+  @override
+  Widget build(BuildContext context){
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: _title,
+      home: AppbarDemo()
+    );
+  }
+}
+void main() {
+  runApp(MyApp());
+}
