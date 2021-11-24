@@ -2,17 +2,19 @@ import 'package:flutter/material.dart';
 class AppbarDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return
+      Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.green,
         leading: IconButton(
           icon: Icon(Icons.menu),
           tooltip: 'Navigation menu',
           onPressed: null,
         ),
-        title: const Text('AppbarDemo'),
-        actions: <Widget>[
+        title:  Text('AppbarDemo'),
+        actions: [
           IconButton(onPressed: () {},
-            icon: const Icon(Icons.add_alert),
+            icon:  Icon(Icons.add),
             tooltip: 'Notification',
           ),
           IconButton(onPressed: () {},
@@ -28,7 +30,7 @@ class AppbarDemo extends StatelessWidget {
       ),
       body: const Center(
         child: Text('Home page',
-          style: TextStyle(fontSize: 50),
+          style: TextStyle(fontSize: 70,),
 
         ),
       ),
@@ -41,9 +43,9 @@ class MyApp extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: _title,
-      home: AppbarDemo()
+        debugShowCheckedModeBanner: false,
+        title: _title,
+        home: AppbarDemo()
     );
   }
 }
