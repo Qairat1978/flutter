@@ -1,40 +1,70 @@
+
 import 'package:flutter/material.dart';
+
 class AppbarDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return
-      Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.green,
-        leading: IconButton(
-          icon: Icon(Icons.menu),
-          tooltip: 'Navigation menu',
-          onPressed: null,
-        ),
-        title:  Text('AppbarDemo'),
-        actions: [
-          IconButton(onPressed: () {},
-            icon:  Icon(Icons.add),
-            tooltip: 'Notification',
+       Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.green,
+          leading: IconButton(
+            icon: Icon(Icons.menu),
+            tooltip: 'Navigation menu',
+            onPressed: null,
           ),
-          IconButton(onPressed: () {},
-            icon: const Icon(Icons.edit),
-            tooltip: 'Message',),
-          IconButton(onPressed: () {},
-            icon: const Icon(Icons.delete),
-            tooltip: 'Message',),
-          IconButton(onPressed: () {},
-            icon: const Icon(Icons.message),
-            tooltip: 'Message',),
-        ],
-      ),
-      body: const Center(
-        child: Text('Home page',
-          style: TextStyle(fontSize: 80,),
-
+          title:  Text('AppbarDemo'),
+          actions: [
+            IconButton(onPressed: () {},
+              icon:  Icon(Icons.add),
+              tooltip: 'Notification',
+            ),
+            IconButton(onPressed: () {},
+              icon: const Icon(Icons.edit),
+              tooltip: 'Message',),
+            IconButton(onPressed: () {},
+              icon: const Icon(Icons.delete),
+              tooltip: 'Message',),
+            IconButton(onPressed: () {},
+              icon: const Icon(Icons.message),
+              tooltip: 'Message',),
+          ],
         ),
-      ),
-    );
+        body:
+
+        Row(
+            children: [
+        Container(
+        padding: EdgeInsets.all(30),
+         color:   Colors.red,
+         child: Text("1"),
+       ),
+    Container(
+    padding: EdgeInsets.all(30),
+    color:   Colors.green,
+    child: Text("2"),
+    ),
+     Expanded (
+       flex: 2,
+       child: Container (
+    padding: EdgeInsets.all(30),
+    color:   Colors.blue,
+    child: Text("3"),
+    ),
+    ),
+
+  Expanded(
+    flex: 0,
+    child:  Container(
+    padding: EdgeInsets.all(30),
+    color:   Colors.yellow,
+    child: Text("4"),
+    ),
+     ),
+        ],
+    ),
+
+      );
   }
 }
 
@@ -43,7 +73,7 @@ class MyApp extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return MaterialApp(
-        debugShowCheckedModeBanner: true,
+        debugShowCheckedModeBanner: false,
         title: _title,
         home: AppbarDemo()
     );
@@ -51,4 +81,3 @@ class MyApp extends StatelessWidget{
 }
 void main() {
   runApp(MyApp());
-}
